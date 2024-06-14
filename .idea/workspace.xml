@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7745e97-56f1-4391-b43c-4e209dd10986" name="Changes" comment="Second push (gunicorn).">
-      <change afterPath="$PROJECT_DIR$/.flaskenv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
+    <list default="true" id="f7745e97-56f1-4391-b43c-4e209dd10986" name="Changes" comment="Fourth push">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +56,35 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="flask_baseball" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/__init__.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.__init__" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -88,7 +117,23 @@
       <option name="project" value="LOCAL" />
       <updated>1718351086807</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Third push (.flaskenv, .gitignore, Procfile).">
+      <option name="closed" value="true" />
+      <created>1718351407735</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1718351407750</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Fourth push">
+      <option name="closed" value="true" />
+      <created>1718351653206</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1718351653206</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -105,6 +150,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First push." />
     <MESSAGE value="Second push (gunicorn)." />
-    <option name="LAST_COMMIT_MESSAGE" value="Second push (gunicorn)." />
+    <MESSAGE value="Third push (.flaskenv, .gitignore, Procfile)." />
+    <MESSAGE value="Fourth push" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fourth push" />
   </component>
 </project>
