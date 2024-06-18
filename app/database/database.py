@@ -1,23 +1,21 @@
-import os
 import pymysql
+from app.config.config import Config
 from pymysql.cursors import DictCursor
-from dotenv import load_dotenv
 
 
 class Database:
-    load_dotenv()
     conn: pymysql.Connection = None
     curs: DictCursor = None
 
     @classmethod
     def init(cls):
         Database.conn = pymysql.connect(
-            host=os.getenv('MYSQL_HOST'),
-            user=os.getenv('MYSQL_USER'),
-            password=os.getenv('MYSQL_PASSWORD'),
-            database=os.getenv('MYSQL_DB'),
+            host=Config.MYSQL_HOST,
+            user=Config.MYSQL_USER,
+            password=Config.MYSQL_PASSWORD,
+            database=Config.MYSQL_DB,
             charset='utf8mb4',
-            cursorclass=os.getenv('MYSQL_CURSOR_CLASS'))
+            cursorclass=DictCursor)
         Database.curs = Database.conn.cursor()
 
     @classmethod

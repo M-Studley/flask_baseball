@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7745e97-56f1-4391-b43c-4e209dd10986" name="Changes" comment="Thirteenth push.&#10;Attempting to solve issues with private files">
+    <list default="true" id="f7745e97-56f1-4391-b43c-4e209dd10986" name="Changes" comment="Fourteenth push.&#10;Attempting to solve issues with private files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/database.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,14 +56,11 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="flask_run_console" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="flask_baseball" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -70,7 +68,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/__init__.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -79,7 +77,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.__init__" />
+        <item itemvalue="Python.flask_run_console" />
       </list>
     </recent_temporary>
   </component>
@@ -219,7 +217,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718688563703</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Fourteenth push.&#10;Attempting to solve issues with private files">
+      <option name="closed" value="true" />
+      <created>1718689033262</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1718689033262</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -248,6 +254,7 @@
     <MESSAGE value="Eleventh push.&#10;Attempting to solve issues with private files" />
     <MESSAGE value="Twelfth push.&#10;Attempting to solve issues with private files" />
     <MESSAGE value="Thirteenth push.&#10;Attempting to solve issues with private files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Thirteenth push.&#10;Attempting to solve issues with private files" />
+    <MESSAGE value="Fourteenth push.&#10;Attempting to solve issues with private files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fourteenth push.&#10;Attempting to solve issues with private files" />
   </component>
 </project>
