@@ -11,12 +11,12 @@ class Database:
     @classmethod
     def init(cls):
         Database.conn = pymysql.connect(
-            host=Config.MYSQL_HOST,
-            user=Config.MYSQL_USER,
-            password=Config.MYSQL_PASSWORD,
-            database=Config.MYSQL_DB,
+            host=MYSQL_HOST,
+            user=MYSQL_USER,
+            password=MYSQL_PASSWORD,
+            database=MYSQL_DB,
             charset='utf8mb4',
-            cursorclass=Config.MYSQL_CURSOR_CLASS)
+            cursorclass=MYSQL_CURSOR_CLASS)
         Database.curs = Database.conn.cursor()
 
     @classmethod

@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7745e97-56f1-4391-b43c-4e209dd10986" name="Changes" comment="Tenth push.&#10;Attempting to solve issues with private files">
+    <list default="true" id="f7745e97-56f1-4391-b43c-4e209dd10986" name="Changes" comment="Eleventh push.&#10;Attempting to solve issues with private files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/database/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/database.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +187,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718685685979</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Eleventh push.&#10;Attempting to solve issues with private files">
+      <option name="closed" value="true" />
+      <created>1718686041771</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1718686041771</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -214,6 +221,7 @@
     <MESSAGE value="Eighth push" />
     <MESSAGE value="Ninth push.&#10;Attempting to solve issues with private files" />
     <MESSAGE value="Tenth push.&#10;Attempting to solve issues with private files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tenth push.&#10;Attempting to solve issues with private files" />
+    <MESSAGE value="Eleventh push.&#10;Attempting to solve issues with private files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Eleventh push.&#10;Attempting to solve issues with private files" />
   </component>
 </project>
