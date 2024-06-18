@@ -1,6 +1,6 @@
-import os
 import pymysql
 from pymysql.cursors import DictCursor
+from etc/secrets import Config
 # from app.config.config import Config
 
 
@@ -11,12 +11,12 @@ class Database:
     @classmethod
     def init(cls):
         Database.conn = pymysql.connect(
-            host=etc/secrets/Config.MYSQL_HOST,
-            user=etc/secrets/Config.MYSQL_USER,
-            password=etc/secrets/Config.MYSQL_PASSWORD,
-            database=etc/secrets/Config.MYSQL_DB,
+            host=Config.MYSQL_HOST,
+            user=Config.MYSQL_USER,
+            password=Config.MYSQL_PASSWORD,
+            database=Config.MYSQL_DB,
             charset='utf8mb4',
-            cursorclass=etc/secrets/Config.MYSQL_CURSOR_CLASS)
+            cursorclass=Config.MYSQL_CURSOR_CLASS)
         Database.curs = Database.conn.cursor()
 
     @classmethod
