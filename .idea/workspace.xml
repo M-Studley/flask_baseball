@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7745e97-56f1-4391-b43c-4e209dd10986" name="Changes" comment="Twelfth push.&#10;Attempting to solve issues with private files">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="f7745e97-56f1-4391-b43c-4e209dd10986" name="Changes" comment="Thirteenth push.&#10;Attempting to solve issues with private files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/database/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/database.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -213,7 +211,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718687398273</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Thirteenth push.&#10;Attempting to solve issues with private files">
+      <option name="closed" value="true" />
+      <created>1718688563703</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1718688563703</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -241,6 +247,7 @@
     <MESSAGE value="Tenth push.&#10;Attempting to solve issues with private files" />
     <MESSAGE value="Eleventh push.&#10;Attempting to solve issues with private files" />
     <MESSAGE value="Twelfth push.&#10;Attempting to solve issues with private files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Twelfth push.&#10;Attempting to solve issues with private files" />
+    <MESSAGE value="Thirteenth push.&#10;Attempting to solve issues with private files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Thirteenth push.&#10;Attempting to solve issues with private files" />
   </component>
 </project>
