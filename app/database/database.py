@@ -1,5 +1,5 @@
 import pymysql
-from app.config.config import Config
+# from app.config.config import Config
 from pymysql.cursors import DictCursor
 
 
