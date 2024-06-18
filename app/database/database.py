@@ -1,12 +1,9 @@
 import os
 import pymysql
-# from app.config.config import Config
 from pymysql.cursors import DictCursor
-# from dotenv import load_dotenv
 
 
 class Database:
-    # load_dotenv()
     conn: pymysql.Connection = None
     curs: DictCursor = None
 
@@ -20,17 +17,6 @@ class Database:
             charset='utf8mb4',
             cursorclass=DictCursor)
         Database.curs = Database.conn.cursor()
-
-    # @classmethod
-    # def init(cls):
-    #     Database.conn = pymysql.connect(
-    #         host=Config.MYSQL_HOST,
-    #         user=Config.MYSQL_USER,
-    #         password=Config.MYSQL_PASSWORD,
-    #         database=Config.MYSQL_DB,
-    #         charset='utf8mb4',
-    #         cursorclass=DictCursor)
-    #     Database.curs = Database.conn.cursor()
 
     @classmethod
     def fetchall(cls, query: str, data: tuple = None) -> tuple:

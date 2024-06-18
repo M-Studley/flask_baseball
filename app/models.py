@@ -9,7 +9,8 @@ def load_user(user_id):
     data = user_id
     user_data = db.fetchone(query, data)
     if user_data:
-        return User.id
+        user = User(**user_data)
+        return user.id
     return None
 
 
@@ -20,9 +21,8 @@ class User(UserMixin):
     user_name: str
     password: str
 
-    @classmethod
-    def get_id(cls):
-        return cls.id
+    def get_id(self):
+        return self.id
 
 
 # Team Model
