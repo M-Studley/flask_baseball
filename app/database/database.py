@@ -1,6 +1,5 @@
 import pymysql
 from pymysql.cursors import DictCursor
-from etc/secrets import Config
 # from app.config.config import Config
 
 
