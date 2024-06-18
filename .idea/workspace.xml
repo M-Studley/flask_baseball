@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7745e97-56f1-4391-b43c-4e209dd10986" name="Changes" comment="Fourteenth push.&#10;Attempting to solve issues with private files">
+    <list default="true" id="f7745e97-56f1-4391-b43c-4e209dd10986" name="Changes" comment="Fifteenth push.&#10;Could not sort out AWS, Render.com.&#10;&#10;running locally now">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/database/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/database.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,6 +60,9 @@
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -225,7 +227,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718689033262</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Fifteenth push.&#10;Could not sort out AWS, Render.com.&#10;&#10;running locally now">
+      <option name="closed" value="true" />
+      <created>1718696743852</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1718696743852</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -255,6 +265,7 @@
     <MESSAGE value="Twelfth push.&#10;Attempting to solve issues with private files" />
     <MESSAGE value="Thirteenth push.&#10;Attempting to solve issues with private files" />
     <MESSAGE value="Fourteenth push.&#10;Attempting to solve issues with private files" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fourteenth push.&#10;Attempting to solve issues with private files" />
+    <MESSAGE value="Fifteenth push.&#10;Could not sort out AWS, Render.com.&#10;&#10;running locally now" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fifteenth push.&#10;Could not sort out AWS, Render.com.&#10;&#10;running locally now" />
   </component>
 </project>
