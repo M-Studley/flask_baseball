@@ -28,9 +28,9 @@ class User(UserMixin):
 # Team Model
 @dataclass
 class Team:
-    id: int
     team_name: str
     team_mascot: str
+    id: int = None
 
 
 # Practice Model

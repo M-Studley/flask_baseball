@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7745e97-56f1-4391-b43c-4e209dd10986" name="Changes" comment="Fifteenth push.&#10;Could not sort out AWS, Render.com.&#10;&#10;running locally now">
+    <list default="true" id="f7745e97-56f1-4391-b43c-4e209dd10986" name="Changes" comment="Sixteenth push.&#10;&#10;UPDATE:&#10;1. __init__.py&#10;  a. configured secrete key&#10;2. base.html&#10;  a. footer now sticky at bottom&#10;3. database.py&#10;  a. init now uses os.getenv&#10;4. static/styles&#10;  a. added photo&#10;5. index.html&#10;  a. url_for new image&#10;6. models.py&#10;  a. if user_data now unpacks user_data into User object and assigns it to variable user&#10;7. requirements.txt&#10;8. routes.py&#10;  a. added login route and utilized forms and validations&#10;  &#10;CREATED: &#10;1. forms.py&#10;  a. LoginForm&#10;2. login.html&#10;  a. flash messages and form&#10;3. styles.css&#10;  a. styled footer and the div inside&#10;  &#10;DELETED:&#10;1. Procfile&#10;2. .flaskenv">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/teams.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,20 +55,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Python.__init__.executor": "Run",
+    "Python.flask_run_console.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/Michael/Desktop/python/python_projects/flask_baseball/app/templates",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Michael\Desktop\python\python_projects\flask_baseball\app\templates" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="flask_run_console" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="flask_baseball" />
-      <option name="ENV_FILES" value="" />
+      <option name="ENV_FILES" value="$PROJECT_DIR$/.env" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -70,7 +90,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/__init__.py" />
       <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
@@ -235,7 +255,39 @@
       <option name="project" value="LOCAL" />
       <updated>1718696743852</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Fifteenth push.&#10;Trying environmental variables for Render&#10;&#10;running locally now">
+      <option name="closed" value="true" />
+      <created>1718699356971</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1718699356971</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Fifteenth push.&#10;Trying environmental variables for Render&#10;&#10;running locally now">
+      <option name="closed" value="true" />
+      <created>1718699767339</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1718699767339</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Fifteenth push.&#10;Trying environmental variables for Render&#10;&#10;running locally now">
+      <option name="closed" value="true" />
+      <created>1718703845643</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1718703845643</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Sixteenth push.&#10;&#10;UPDATE:&#10;1. __init__.py&#10;  a. configured secrete key&#10;2. base.html&#10;  a. footer now sticky at bottom&#10;3. database.py&#10;  a. init now uses os.getenv&#10;4. static/styles&#10;  a. added photo&#10;5. index.html&#10;  a. url_for new image&#10;6. models.py&#10;  a. if user_data now unpacks user_data into User object and assigns it to variable user&#10;7. requirements.txt&#10;8. routes.py&#10;  a. added login route and utilized forms and validations&#10;  &#10;CREATED: &#10;1. forms.py&#10;  a. LoginForm&#10;2. login.html&#10;  a. flash messages and form&#10;3. styles.css&#10;  a. styled footer and the div inside&#10;  &#10;DELETED:&#10;1. Procfile&#10;2. .flaskenv">
+      <option name="closed" value="true" />
+      <created>1718712350063</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1718712350063</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -266,6 +318,8 @@
     <MESSAGE value="Thirteenth push.&#10;Attempting to solve issues with private files" />
     <MESSAGE value="Fourteenth push.&#10;Attempting to solve issues with private files" />
     <MESSAGE value="Fifteenth push.&#10;Could not sort out AWS, Render.com.&#10;&#10;running locally now" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fifteenth push.&#10;Could not sort out AWS, Render.com.&#10;&#10;running locally now" />
+    <MESSAGE value="Fifteenth push.&#10;Trying environmental variables for Render&#10;&#10;running locally now" />
+    <MESSAGE value="Sixteenth push.&#10;&#10;UPDATE:&#10;1. __init__.py&#10;  a. configured secrete key&#10;2. base.html&#10;  a. footer now sticky at bottom&#10;3. database.py&#10;  a. init now uses os.getenv&#10;4. static/styles&#10;  a. added photo&#10;5. index.html&#10;  a. url_for new image&#10;6. models.py&#10;  a. if user_data now unpacks user_data into User object and assigns it to variable user&#10;7. requirements.txt&#10;8. routes.py&#10;  a. added login route and utilized forms and validations&#10;  &#10;CREATED: &#10;1. forms.py&#10;  a. LoginForm&#10;2. login.html&#10;  a. flash messages and form&#10;3. styles.css&#10;  a. styled footer and the div inside&#10;  &#10;DELETED:&#10;1. Procfile&#10;2. .flaskenv" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sixteenth push.&#10;&#10;UPDATE:&#10;1. __init__.py&#10;  a. configured secrete key&#10;2. base.html&#10;  a. footer now sticky at bottom&#10;3. database.py&#10;  a. init now uses os.getenv&#10;4. static/styles&#10;  a. added photo&#10;5. index.html&#10;  a. url_for new image&#10;6. models.py&#10;  a. if user_data now unpacks user_data into User object and assigns it to variable user&#10;7. requirements.txt&#10;8. routes.py&#10;  a. added login route and utilized forms and validations&#10;  &#10;CREATED: &#10;1. forms.py&#10;  a. LoginForm&#10;2. login.html&#10;  a. flash messages and form&#10;3. styles.css&#10;  a. styled footer and the div inside&#10;  &#10;DELETED:&#10;1. Procfile&#10;2. .flaskenv" />
   </component>
 </project>
