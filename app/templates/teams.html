@@ -91,11 +91,11 @@
                   </div>
                   <form action="{{ url_for('team_update', team_id=team.id) }}" method="POST" novalidate>
                     <div class="modal-body">
-                      <p>
+                      <p align="left">
                         <label for="team_name">Team Name:</label><br>
                         <input type="text" id="team_name" name="team_name" value="{{ team.team_name }}">
                       </p>
-                      <p>
+                      <p align="left">
                         <label for="team_mascot">Team Mascot:</label><br>
                         <input type="text" id="team_mascot" name="team_mascot" value="{{ team.team_mascot }}">
                       </p>

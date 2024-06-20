@@ -1,13 +1,19 @@
 from flask import render_template, redirect, url_for, flash, session, request
 from flask_login import login_user, logout_user, login_required, current_user
 from app import app, db, login
-from app.models import User, Team
-from app.forms import LoginForm, TeamForm
+from app.models import User, Team, Practice
+from app.forms import LoginForm, TeamForm, PracticeForm
+
+
+# HOME PAGE
 
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
+
+# USER - LOGIN, LOGOUT
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -44,6 +50,9 @@ def logout():
 @login.unauthorized_handler
 def unauthorized():
     return redirect(url_for('user_login'))
+
+
+# TEAM - MAIN, UPDATE, DELETE
 
 
 @login_required
@@ -83,3 +92,54 @@ def team_delete(team_id):
     db.execute('ALTER TABLE `team` AUTO_INCREMENT = %s', (1,))
     flash('Team has been permanently deleted')
     return redirect(url_for('teams'))
+
+
+# PRACTICES - MAIN, UPDATE, DELETE
+
+
+@login_required
+@app.route('/practices', methods=['GET', 'POST'])
+def practices():
+    form = PracticeForm()
+    all_teams = db.fetchall('SELECT * FROM `team`')
+    form.teams.choices = [(team['id'], team['team_name']) for team in all_teams]
+
+    if request.method == 'POST':
+        practice_date = request.form.get('practice_date')
+        practice_length = request.form.get('practice_length')
+        team_id = request.form.get('teams')
+        practice = Practice(practice_date=practice_date, practice_length=float(practice_length), team_id=int(team_id))
+        db.execute(query='INSERT INTO `practice` (`practice_date`, `practice_length`, `team_id`) VALUES (%s, %s, %s)',
+                   data=(practice.practice_date, practice.practice_length, practice.team_id))
+        return redirect(url_for('practices'))
+
+    all_practices = db.fetchall(
+        """
+        SELECT `t`.`id`, `t`.`team_name`, `t`.`team_mascot`, `p`.`practice_date`, `p`.`practice_length` 
+        FROM `team` AS `t` JOIN `practice` AS `p` ON `t`.`id` = `p`.`team_id`
+        """)
+    return render_template('practices.html', form=form, teams=all_teams, all_practices=all_practices)
+
+
+@login_required
+@app.route('/practice_update/<practice_id>', methods=['GET', 'POST'])
+def practice_update(practice_id):
+    query = "SELECT * FROM `practice` WHERE id = %s"
+    fetched_practice = db.fetchone(query, practice_id)
+    practice = Practice(**fetched_practice)
+    practice.practice_date = request.form.get('practice_date')
+    practice.practice_length = request.form.get('practice_length')
+    # practice.team_id = request.form.get('teams')
+    db.execute('UPDATE `baseball`.`practice` SET `practice_date` = %s, `practice_length` = %s WHERE `id`= %s;',
+               (practice.practice_date, practice.practice_length, practice.id))
+    flash(f'The practice has been successfully updated!')
+    return redirect(url_for('practices'))
+
+
+@login_required
+@app.route('/practice_delete/<practice_id>', methods=['GET', 'POST'])
+def practice_delete(practice_id):
+    db.execute('DELETE FROM `baseball`.`practice` WHERE id = %s', (practice_id,))
+    db.execute('ALTER TABLE `practice` AUTO_INCREMENT = %s', (1,))
+    flash('Practice has been permanently deleted')
+    return redirect(url_for('practices'))

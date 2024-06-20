@@ -8,15 +8,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7745e97-56f1-4391-b43c-4e209dd10986" name="Changes" comment="Sixteenth push.&#10;&#10;UPDATE:&#10;1. __init__.py&#10;  a. configured secrete key&#10;2. base.html&#10;  a. footer now sticky at bottom&#10;3. database.py&#10;  a. init now uses os.getenv&#10;4. static/styles&#10;  a. added photo&#10;5. index.html&#10;  a. url_for new image&#10;6. models.py&#10;  a. if user_data now unpacks user_data into User object and assigns it to variable user&#10;7. requirements.txt&#10;8. routes.py&#10;  a. added login route and utilized forms and validations&#10;  &#10;CREATED: &#10;1. forms.py&#10;  a. LoginForm&#10;2. login.html&#10;  a. flash messages and form&#10;3. styles.css&#10;  a. styled footer and the div inside&#10;  &#10;DELETED:&#10;1. Procfile&#10;2. .flaskenv">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/templates/teams.html" afterDir="false" />
+    <list default="true" id="f7745e97-56f1-4391-b43c-4e209dd10986" name="Changes" comment="Sixteenth push.&#10;&#10;UPDATE:&#10;1. base.html&#10;  a. added url_for&#10;2. models.py&#10;  a. assigned Team.id: int = None&#10;3. routes.py&#10;  a. login -&gt; user_login&#10;  &#10;CREATED: &#10;1. forms.py&#10;  a. TeamForm&#10;2. routes.py&#10;  a. unauthorized function&#10;  b. teams route&#10;  c. team_update route&#10;  d. team_delete route&#10;3. teams.html&#10;  a. Entire page with tables, add, update and delete buttons&#10;  &#10;DELETED:&#10;NONE">
+      <change afterPath="$PROJECT_DIR$/app/templates/practices.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/teams.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/teams.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,20 +54,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Python.__init__.executor": "Run",
-    "Python.flask_run_console.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/Users/Michael/Desktop/python/python_projects/flask_baseball/app/templates",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
+    &quot;Python.flask_run_console.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Michael/Desktop/python/python_projects/flask_baseball/app/templates&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Michael\Desktop\python\python_projects\flask_baseball\app\templates" />
@@ -287,7 +286,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718712350063</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Sixteenth push.&#10;&#10;UPDATE:&#10;1. base.html&#10;  a. added url_for&#10;2. models.py&#10;  a. assigned Team.id: int = None&#10;3. routes.py&#10;  a. login -&gt; user_login&#10;  &#10;CREATED: &#10;1. forms.py&#10;  a. TeamForm&#10;2. routes.py&#10;  a. unauthorized function&#10;  b. teams route&#10;  c. team_update route&#10;  d. team_delete route&#10;3. teams.html&#10;  a. Entire page with tables, add, update and delete buttons&#10;  &#10;DELETED:&#10;NONE">
+      <option name="closed" value="true" />
+      <created>1718796100285</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1718796100285</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -320,6 +327,7 @@
     <MESSAGE value="Fifteenth push.&#10;Could not sort out AWS, Render.com.&#10;&#10;running locally now" />
     <MESSAGE value="Fifteenth push.&#10;Trying environmental variables for Render&#10;&#10;running locally now" />
     <MESSAGE value="Sixteenth push.&#10;&#10;UPDATE:&#10;1. __init__.py&#10;  a. configured secrete key&#10;2. base.html&#10;  a. footer now sticky at bottom&#10;3. database.py&#10;  a. init now uses os.getenv&#10;4. static/styles&#10;  a. added photo&#10;5. index.html&#10;  a. url_for new image&#10;6. models.py&#10;  a. if user_data now unpacks user_data into User object and assigns it to variable user&#10;7. requirements.txt&#10;8. routes.py&#10;  a. added login route and utilized forms and validations&#10;  &#10;CREATED: &#10;1. forms.py&#10;  a. LoginForm&#10;2. login.html&#10;  a. flash messages and form&#10;3. styles.css&#10;  a. styled footer and the div inside&#10;  &#10;DELETED:&#10;1. Procfile&#10;2. .flaskenv" />
-    <option name="LAST_COMMIT_MESSAGE" value="Sixteenth push.&#10;&#10;UPDATE:&#10;1. __init__.py&#10;  a. configured secrete key&#10;2. base.html&#10;  a. footer now sticky at bottom&#10;3. database.py&#10;  a. init now uses os.getenv&#10;4. static/styles&#10;  a. added photo&#10;5. index.html&#10;  a. url_for new image&#10;6. models.py&#10;  a. if user_data now unpacks user_data into User object and assigns it to variable user&#10;7. requirements.txt&#10;8. routes.py&#10;  a. added login route and utilized forms and validations&#10;  &#10;CREATED: &#10;1. forms.py&#10;  a. LoginForm&#10;2. login.html&#10;  a. flash messages and form&#10;3. styles.css&#10;  a. styled footer and the div inside&#10;  &#10;DELETED:&#10;1. Procfile&#10;2. .flaskenv" />
+    <MESSAGE value="Sixteenth push.&#10;&#10;UPDATE:&#10;1. base.html&#10;  a. added url_for&#10;2. models.py&#10;  a. assigned Team.id: int = None&#10;3. routes.py&#10;  a. login -&gt; user_login&#10;  &#10;CREATED: &#10;1. forms.py&#10;  a. TeamForm&#10;2. routes.py&#10;  a. unauthorized function&#10;  b. teams route&#10;  c. team_update route&#10;  d. team_delete route&#10;3. teams.html&#10;  a. Entire page with tables, add, update and delete buttons&#10;  &#10;DELETED:&#10;NONE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Sixteenth push.&#10;&#10;UPDATE:&#10;1. base.html&#10;  a. added url_for&#10;2. models.py&#10;  a. assigned Team.id: int = None&#10;3. routes.py&#10;  a. login -&gt; user_login&#10;  &#10;CREATED: &#10;1. forms.py&#10;  a. TeamForm&#10;2. routes.py&#10;  a. unauthorized function&#10;  b. teams route&#10;  c. team_update route&#10;  d. team_delete route&#10;3. teams.html&#10;  a. Entire page with tables, add, update and delete buttons&#10;  &#10;DELETED:&#10;NONE" />
   </component>
 </project>

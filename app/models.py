@@ -36,7 +36,7 @@ class Team:
 # Practice Model
 @dataclass
 class Practice:
-    id: int
-    practice_length: int
+    practice_length: float
     practice_date: str
     team_id: int
+    id: int = None
