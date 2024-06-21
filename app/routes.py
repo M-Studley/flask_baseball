@@ -22,22 +22,25 @@ def user_login():
         return redirect(url_for('index'))
 
     form = LoginForm()
-    form_username = form.username.data
-    form_password = form.password.data
-    query = "SELECT * FROM `user` WHERE `user_name` = %s"
-    user_data = db.fetchone(query, (form_username,))
+    if request.method == 'POST':
+        if not form.validate_on_submit():
+            flash('Please fill out the entire form...')
+        else:
+            form_username = form.username.data
+            form_password = form.password.data
+            query = "SELECT * FROM `user` WHERE `user_name` = %s"
+            user_data = db.fetchone(query, (form_username,))
+            user = User(**user_data)
+            password = user.password
 
-    if form.validate_on_submit():
-        user = User(**user_data)
-        password = user.password
+            if not user or password != form_password:
+                flash('Invalid username or password!')
+                return redirect(url_for('user_login'))
 
-        if not user or password != form_password:
-            flash('Invalid username or password!')
-            return redirect(url_for('user_login'))
+            login_user(user)
+            session.permanent = False
+            return redirect(url_for('index'))
 
-        login_user(user)
-        session.permanent = True
-        return redirect(url_for('index'))
     return render_template('login.html', title='Log In', form=form)
 
 
@@ -54,13 +57,16 @@ def logout():
 @app.route('/teams', methods=['GET', 'POST'])
 def teams():
     form = TeamForm()
-    if request.method == 'POST' and form.validate():
-        team_name = request.form.get('team_name')
-        team_mascot = request.form.get('team_mascot')
-        team = Team(team_name=team_name, team_mascot=team_mascot)
-        db.execute('INSERT INTO `team` (`team_name`, `team_mascot`) VALUES (%s, %s)',
-                   (team.team_name, team.team_mascot))
-        return redirect(url_for('teams'))
+    if request.method == 'POST':
+        if not form.validate_on_submit():
+            flash('Please fill out the entire form')
+        else:
+            team_name = request.form.get('team_name')
+            team_mascot = request.form.get('team_mascot')
+            team = Team(team_name=team_name, team_mascot=team_mascot)
+            db.execute('INSERT INTO `team` (`team_name`, `team_mascot`) VALUES (%s, %s)',
+                       (team.team_name, team.team_mascot))
+            return redirect(url_for('teams'))
 
     all_teams = db.fetchall('SELECT * FROM `team`')
     return render_template('teams.html', form=form, teams=all_teams)
@@ -100,13 +106,18 @@ def practices():
     form.teams.choices = [(team['id'], team['team_name']) for team in all_teams]
 
     if request.method == 'POST':
-        practice_date = request.form.get('practice_date')
-        practice_length = request.form.get('practice_length')
-        team_id = request.form.get('teams')
-        practice = Practice(practice_date=practice_date, practice_length=float(practice_length), team_id=int(team_id))
-        db.execute(query='INSERT INTO `practice` (`practice_date`, `practice_length`, `team_id`) VALUES (%s, %s, %s)',
-                   data=(practice.practice_date, practice.practice_length, practice.team_id))
-        return redirect(url_for('practices'))
+        if not form.validate_on_submit():
+            flash('Please fill out the entire form...')
+        else:
+            practice_date = request.form.get('practice_date')
+            practice_length = request.form.get('practice_length')
+            team_id = request.form.get('teams')
+            practice = Practice(practice_date=practice_date, practice_length=float(practice_length), team_id=int(team_id))
+            db.execute(
+                query='INSERT INTO `practice` (`practice_date`, `practice_length`, `team_id`) VALUES (%s, %s, %s)',
+                data=(practice.practice_date, practice.practice_length, practice.team_id)
+            )
+            return redirect(url_for('practices'))
 
     all_practices = db.fetchall(
         """

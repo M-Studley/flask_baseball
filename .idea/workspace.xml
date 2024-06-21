@@ -8,8 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7745e97-56f1-4391-b43c-4e209dd10986" name="Changes" comment="Seventeenth push.&#10;&#10;UPDATE:&#10;1. base.html&#10;  a. added url_for&#10;2. models.py&#10;  a. assigned Practice.id: int = None&#10;3. routes.py&#10;  a. login -&gt; user_login&#10;4. teams.html&#10;  a. aligned input fields left in update modal&#10;  &#10;CREATED: &#10;1. forms.py &#10;  a. PracticeForm&#10;2. routes.py&#10;  a. practice route&#10;  b. practice_update route&#10;  c. practice_delete route&#10;3. practices.html&#10;  a. Entire page with tables, add, update and delete buttons&#10;  &#10;DELETED:&#10;NONE">
+    <list default="true" id="f7745e97-56f1-4391-b43c-4e209dd10986" name="Changes" comment="Seventeenth push.&#10;&#10;UPDATE:&#10;1. models.py&#10;  a. removed unnecessary method&#10;2. routes.py&#10;  a. removed unnecessary function&#10;  &#10;CREATED: &#10;NONE&#10;  &#10;DELETED:&#10;NONE">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -304,7 +306,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718883810480</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Seventeenth push.&#10;&#10;UPDATE:&#10;1. models.py&#10;  a. removed unnecessary method&#10;2. routes.py&#10;  a. removed unnecessary function&#10;  &#10;CREATED: &#10;NONE&#10;  &#10;DELETED:&#10;NONE">
+      <option name="closed" value="true" />
+      <created>1718950943040</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1718950943040</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -339,6 +349,7 @@
     <MESSAGE value="Sixteenth push.&#10;&#10;UPDATE:&#10;1. __init__.py&#10;  a. configured secrete key&#10;2. base.html&#10;  a. footer now sticky at bottom&#10;3. database.py&#10;  a. init now uses os.getenv&#10;4. static/styles&#10;  a. added photo&#10;5. index.html&#10;  a. url_for new image&#10;6. models.py&#10;  a. if user_data now unpacks user_data into User object and assigns it to variable user&#10;7. requirements.txt&#10;8. routes.py&#10;  a. added login route and utilized forms and validations&#10;  &#10;CREATED: &#10;1. forms.py&#10;  a. LoginForm&#10;2. login.html&#10;  a. flash messages and form&#10;3. styles.css&#10;  a. styled footer and the div inside&#10;  &#10;DELETED:&#10;1. Procfile&#10;2. .flaskenv" />
     <MESSAGE value="Sixteenth push.&#10;&#10;UPDATE:&#10;1. base.html&#10;  a. added url_for&#10;2. models.py&#10;  a. assigned Team.id: int = None&#10;3. routes.py&#10;  a. login -&gt; user_login&#10;  &#10;CREATED: &#10;1. forms.py&#10;  a. TeamForm&#10;2. routes.py&#10;  a. unauthorized function&#10;  b. teams route&#10;  c. team_update route&#10;  d. team_delete route&#10;3. teams.html&#10;  a. Entire page with tables, add, update and delete buttons&#10;  &#10;DELETED:&#10;NONE" />
     <MESSAGE value="Seventeenth push.&#10;&#10;UPDATE:&#10;1. base.html&#10;  a. added url_for&#10;2. models.py&#10;  a. assigned Practice.id: int = None&#10;3. routes.py&#10;  a. login -&gt; user_login&#10;4. teams.html&#10;  a. aligned input fields left in update modal&#10;  &#10;CREATED: &#10;1. forms.py &#10;  a. PracticeForm&#10;2. routes.py&#10;  a. practice route&#10;  b. practice_update route&#10;  c. practice_delete route&#10;3. practices.html&#10;  a. Entire page with tables, add, update and delete buttons&#10;  &#10;DELETED:&#10;NONE" />
-    <option name="LAST_COMMIT_MESSAGE" value="Seventeenth push.&#10;&#10;UPDATE:&#10;1. base.html&#10;  a. added url_for&#10;2. models.py&#10;  a. assigned Practice.id: int = None&#10;3. routes.py&#10;  a. login -&gt; user_login&#10;4. teams.html&#10;  a. aligned input fields left in update modal&#10;  &#10;CREATED: &#10;1. forms.py &#10;  a. PracticeForm&#10;2. routes.py&#10;  a. practice route&#10;  b. practice_update route&#10;  c. practice_delete route&#10;3. practices.html&#10;  a. Entire page with tables, add, update and delete buttons&#10;  &#10;DELETED:&#10;NONE" />
+    <MESSAGE value="Seventeenth push.&#10;&#10;UPDATE:&#10;1. models.py&#10;  a. removed unnecessary method&#10;2. routes.py&#10;  a. removed unnecessary function&#10;  &#10;CREATED: &#10;NONE&#10;  &#10;DELETED:&#10;NONE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Seventeenth push.&#10;&#10;UPDATE:&#10;1. models.py&#10;  a. removed unnecessary method&#10;2. routes.py&#10;  a. removed unnecessary function&#10;  &#10;CREATED: &#10;NONE&#10;  &#10;DELETED:&#10;NONE" />
   </component>
 </project>
