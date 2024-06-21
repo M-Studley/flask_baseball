@@ -112,14 +112,19 @@ def practices():
         practice = Practice(practice_date=practice_date, practice_length=float(practice_length), team_id=int(team_id))
         db.execute(query='INSERT INTO `practice` (`practice_date`, `practice_length`, `team_id`) VALUES (%s, %s, %s)',
                    data=(practice.practice_date, practice.practice_length, practice.team_id))
-        flash('Team successfully created!', category='success')
+        flash('Practice successfully created!', category='success')
         return redirect(url_for('practices'))
 
     all_practices = db.fetchall(
         """
-        SELECT `t`.`id`, `t`.`team_name`, `t`.`team_mascot`, `p`.`id` AS `practice_id`, `p`.`practice_date`, `p`.`practice_length`, `p`.`team_id` 
-        FROM `team` AS `t` JOIN `practice` AS `p` ON `t`.`id` = `p`.`team_id`
-        """)
+        SELECT 
+        `t`.`id`, `t`.`team_name`, `t`.`team_mascot`, 
+        `p`.`id` AS `practice_id`, `p`.`practice_date`, `p`.`practice_length`, `p`.`team_id` 
+        FROM `team` AS `t` 
+        JOIN `practice` AS `p` 
+        ON `t`.`id` = `p`.`team_id`
+        """
+    )
     return render_template('practices.html', form=form, teams=all_teams, all_practices=all_practices)
 
 

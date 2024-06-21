@@ -8,16 +8,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7745e97-56f1-4391-b43c-4e209dd10986" name="Changes" comment="Eighteenth push.&#10;&#10;UPDATE:&#10;1. index.py&#10;  a. removed fluff&#10;2. routes.py&#10;  a. validate_on_submit() for all forms with flash messages&#10;  &#10;CREATED: &#10;NONE&#10;  &#10;DELETED:&#10;NONE">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
+    <list default="true" id="f7745e97-56f1-4391-b43c-4e209dd10986" name="Changes" comment="Eighteenth push.&#10;&#10;UPDATE:&#10;1. forms.py&#10;  a. removed DataRequired() and substituted InputRequired()&#10;2. index.html&#10;  a. flash messages with categories&#10;3. login.html&#10;  a. flash messages with categories&#10;4. practices.html&#10;  a. flash messages with categories&#10;5. teams.html&#10;  a. flash messages with categories&#10;6. routes.py&#10;  a. flash messages with categories&#10;  b. all_practices query modified to include practice id&#10;  &#10;CREATED: &#10;  NONE&#10;  &#10;DELETED:&#10;  NONE">
       <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/practices.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/practices.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/teams.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/teams.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -328,7 +321,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718956612467</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Eighteenth push.&#10;&#10;UPDATE:&#10;1. forms.py&#10;  a. removed DataRequired() and substituted InputRequired()&#10;2. index.html&#10;  a. flash messages with categories&#10;3. login.html&#10;  a. flash messages with categories&#10;4. practices.html&#10;  a. flash messages with categories&#10;5. teams.html&#10;  a. flash messages with categories&#10;6. routes.py&#10;  a. flash messages with categories&#10;  b. all_practices query modified to include practice id&#10;  &#10;CREATED: &#10;  NONE&#10;  &#10;DELETED:&#10;  NONE">
+      <option name="closed" value="true" />
+      <created>1718976782073</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1718976782073</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -365,6 +366,7 @@
     <MESSAGE value="Seventeenth push.&#10;&#10;UPDATE:&#10;1. base.html&#10;  a. added url_for&#10;2. models.py&#10;  a. assigned Practice.id: int = None&#10;3. routes.py&#10;  a. login -&gt; user_login&#10;4. teams.html&#10;  a. aligned input fields left in update modal&#10;  &#10;CREATED: &#10;1. forms.py &#10;  a. PracticeForm&#10;2. routes.py&#10;  a. practice route&#10;  b. practice_update route&#10;  c. practice_delete route&#10;3. practices.html&#10;  a. Entire page with tables, add, update and delete buttons&#10;  &#10;DELETED:&#10;NONE" />
     <MESSAGE value="Seventeenth push.&#10;&#10;UPDATE:&#10;1. models.py&#10;  a. removed unnecessary method&#10;2. routes.py&#10;  a. removed unnecessary function&#10;  &#10;CREATED: &#10;NONE&#10;  &#10;DELETED:&#10;NONE" />
     <MESSAGE value="Eighteenth push.&#10;&#10;UPDATE:&#10;1. index.py&#10;  a. removed fluff&#10;2. routes.py&#10;  a. validate_on_submit() for all forms with flash messages&#10;  &#10;CREATED: &#10;NONE&#10;  &#10;DELETED:&#10;NONE" />
-    <option name="LAST_COMMIT_MESSAGE" value="Eighteenth push.&#10;&#10;UPDATE:&#10;1. index.py&#10;  a. removed fluff&#10;2. routes.py&#10;  a. validate_on_submit() for all forms with flash messages&#10;  &#10;CREATED: &#10;NONE&#10;  &#10;DELETED:&#10;NONE" />
+    <MESSAGE value="Eighteenth push.&#10;&#10;UPDATE:&#10;1. forms.py&#10;  a. removed DataRequired() and substituted InputRequired()&#10;2. index.html&#10;  a. flash messages with categories&#10;3. login.html&#10;  a. flash messages with categories&#10;4. practices.html&#10;  a. flash messages with categories&#10;5. teams.html&#10;  a. flash messages with categories&#10;6. routes.py&#10;  a. flash messages with categories&#10;  b. all_practices query modified to include practice id&#10;  &#10;CREATED: &#10;  NONE&#10;  &#10;DELETED:&#10;  NONE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Eighteenth push.&#10;&#10;UPDATE:&#10;1. forms.py&#10;  a. removed DataRequired() and substituted InputRequired()&#10;2. index.html&#10;  a. flash messages with categories&#10;3. login.html&#10;  a. flash messages with categories&#10;4. practices.html&#10;  a. flash messages with categories&#10;5. teams.html&#10;  a. flash messages with categories&#10;6. routes.py&#10;  a. flash messages with categories&#10;  b. all_practices query modified to include practice id&#10;  &#10;CREATED: &#10;  NONE&#10;  &#10;DELETED:&#10;  NONE" />
   </component>
 </project>
