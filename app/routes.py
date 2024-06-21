@@ -1,6 +1,6 @@
 from flask import render_template, redirect, url_for, flash, session, request
 from flask_login import login_user, logout_user, login_required, current_user
-from app import app, db
+from app import app, db, login
 from app.models import User, Team, Practice
 from app.forms import LoginForm, TeamForm, PracticeForm
 
@@ -22,25 +22,23 @@ def user_login():
         return redirect(url_for('index'))
 
     form = LoginForm()
-    if request.method == 'POST':
-        if not form.validate_on_submit():
-            flash('Please fill out the entire form...')
-        else:
-            form_username = form.username.data
-            form_password = form.password.data
-            query = "SELECT * FROM `user` WHERE `user_name` = %s"
-            user_data = db.fetchone(query, (form_username,))
-            user = User(**user_data)
-            password = user.password
+    form_username = form.username.data
+    form_password = form.password.data
+    query = "SELECT * FROM `user` WHERE `user_name` = %s"
+    user_data = db.fetchone(query, (form_username,))
 
-            if not user or password != form_password:
-                flash('Invalid username or password!')
-                return redirect(url_for('user_login'))
+    if form.validate_on_submit():
+        user = User(**user_data)
+        password = user.password
 
-            login_user(user)
-            session.permanent = False
-            return redirect(url_for('index'))
+        if not user or password != form_password:
+            flash('Invalid username or password!', category='danger')
+            return redirect(url_for('user_login'))
 
+        login_user(user)
+        session.permanent = True
+        flash('Log in success!', category='success')
+        return redirect(url_for('index'))
     return render_template('login.html', title='Log In', form=form)
 
 
@@ -50,6 +48,11 @@ def logout():
     return redirect(url_for('index'))
 
 
+@login.unauthorized_handler
+def unauthorized():
+    return redirect(url_for('user_login'))
+
+
 # TEAM - MAIN, UPDATE, DELETE
 
 
@@ -57,16 +60,14 @@ def logout():
 @app.route('/teams', methods=['GET', 'POST'])
 def teams():
     form = TeamForm()
-    if request.method == 'POST':
-        if not form.validate_on_submit():
-            flash('Please fill out the entire form')
-        else:
-            team_name = request.form.get('team_name')
-            team_mascot = request.form.get('team_mascot')
-            team = Team(team_name=team_name, team_mascot=team_mascot)
-            db.execute('INSERT INTO `team` (`team_name`, `team_mascot`) VALUES (%s, %s)',
-                       (team.team_name, team.team_mascot))
-            return redirect(url_for('teams'))
+    if request.method == 'POST' and form.validate():
+        team_name = request.form.get('team_name')
+        team_mascot = request.form.get('team_mascot')
+        team = Team(team_name=team_name, team_mascot=team_mascot)
+        db.execute('INSERT INTO `team` (`team_name`, `team_mascot`) VALUES (%s, %s)',
+                   (team.team_name, team.team_mascot))
+        flash('Team successfully created!', category='success')
+        return redirect(url_for('teams'))
 
     all_teams = db.fetchall('SELECT * FROM `team`')
     return render_template('teams.html', form=form, teams=all_teams)
@@ -82,7 +83,7 @@ def team_update(team_id):
     team.team_mascot = request.form.get('team_mascot')
     db.execute('UPDATE `baseball`.`team` SET `team_name` = %s, `team_mascot` = %s WHERE `id`= %s;',
                (team.team_name, team.team_mascot, team.id))
-    flash(f'{team.team_name} has been successfully updated!')
+    flash(f'{team.team_name} has been successfully updated!', category='success')
     return redirect(url_for('teams'))
 
 
@@ -90,8 +91,7 @@ def team_update(team_id):
 @app.route('/team_delete/<team_id>', methods=['GET', 'POST'])
 def team_delete(team_id):
     db.execute('DELETE FROM `baseball`.`team` WHERE id = %s', (team_id,))
-    db.execute('ALTER TABLE `team` AUTO_INCREMENT = %s', (1,))
-    flash('Team has been permanently deleted')
+    flash('Team has been permanently deleted', category='danger')
     return redirect(url_for('teams'))
 
 
@@ -106,22 +106,18 @@ def practices():
     form.teams.choices = [(team['id'], team['team_name']) for team in all_teams]
 
     if request.method == 'POST':
-        if not form.validate_on_submit():
-            flash('Please fill out the entire form...')
-        else:
-            practice_date = request.form.get('practice_date')
-            practice_length = request.form.get('practice_length')
-            team_id = request.form.get('teams')
-            practice = Practice(practice_date=practice_date, practice_length=float(practice_length), team_id=int(team_id))
-            db.execute(
-                query='INSERT INTO `practice` (`practice_date`, `practice_length`, `team_id`) VALUES (%s, %s, %s)',
-                data=(practice.practice_date, practice.practice_length, practice.team_id)
-            )
-            return redirect(url_for('practices'))
+        practice_date = request.form.get('practice_date')
+        practice_length = request.form.get('practice_length')
+        team_id = request.form.get('teams')
+        practice = Practice(practice_date=practice_date, practice_length=float(practice_length), team_id=int(team_id))
+        db.execute(query='INSERT INTO `practice` (`practice_date`, `practice_length`, `team_id`) VALUES (%s, %s, %s)',
+                   data=(practice.practice_date, practice.practice_length, practice.team_id))
+        flash('Team successfully created!', category='success')
+        return redirect(url_for('practices'))
 
     all_practices = db.fetchall(
         """
-        SELECT `t`.`id`, `t`.`team_name`, `t`.`team_mascot`, `p`.`practice_date`, `p`.`practice_length` 
+        SELECT `t`.`id`, `t`.`team_name`, `t`.`team_mascot`, `p`.`id` AS `practice_id`, `p`.`practice_date`, `p`.`practice_length`, `p`.`team_id` 
         FROM `team` AS `t` JOIN `practice` AS `p` ON `t`.`id` = `p`.`team_id`
         """)
     return render_template('practices.html', form=form, teams=all_teams, all_practices=all_practices)
@@ -135,10 +131,9 @@ def practice_update(practice_id):
     practice = Practice(**fetched_practice)
     practice.practice_date = request.form.get('practice_date')
     practice.practice_length = request.form.get('practice_length')
-    # practice.team_id = request.form.get('teams')
     db.execute('UPDATE `baseball`.`practice` SET `practice_date` = %s, `practice_length` = %s WHERE `id`= %s;',
                (practice.practice_date, practice.practice_length, practice.id))
-    flash(f'The practice has been successfully updated!')
+    flash(f'The practice has been successfully updated!', category='success')
     return redirect(url_for('practices'))
 
 
@@ -146,6 +141,5 @@ def practice_update(practice_id):
 @app.route('/practice_delete/<practice_id>', methods=['GET', 'POST'])
 def practice_delete(practice_id):
     db.execute('DELETE FROM `baseball`.`practice` WHERE id = %s', (practice_id,))
-    db.execute('ALTER TABLE `practice` AUTO_INCREMENT = %s', (1,))
-    flash('Practice has been permanently deleted')
+    flash('Practice has been permanently deleted', category='danger')
     return redirect(url_for('practices'))

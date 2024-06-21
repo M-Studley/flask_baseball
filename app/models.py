@@ -21,6 +21,9 @@ class User(UserMixin):
     user_name: str
     password: str
 
+    def get_id(self):
+        return self.id
+
 
 # Team Model
 @dataclass

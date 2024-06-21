@@ -21,11 +21,11 @@
   <div class="container px-4">
     <div class="row gx-4 justify-content-center">
       <div class="col-lg-10">
-        {% with messages = get_flashed_messages() %}
+        {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
-        {% for message in messages %}
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-          {{ message }}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+          <h5 align="center">{{ message }}</h5>
           <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
         {% endfor %}
@@ -87,15 +87,15 @@
           <td align="center">{{ practice.practice_date }}</td>
           <td align="center">{{ practice.practice_length }}</td>
           <td align="center">
-            <button type="button" class="btn btn-outline-dark btn-sm btn-block" data-bs-toggle="modal" data-bs-target="#update_modal{{ practice.id }}">Update</button>
-            <div class="modal fade" id="update_modal{{practice.id}}" aria-labelledby="update_modalLabel" aria-hidden="true">
+            <button type="button" class="btn btn-outline-dark btn-sm btn-block" data-bs-toggle="modal" data-bs-target="#update_modal{{ practice.practice_id }}">Update</button>
+            <div class="modal fade" id="update_modal{{practice.practice_id}}" aria-labelledby="update_modalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="update_modalLabel">Update Practice</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
-                  <form action="{{ url_for('practice_update', practice_id=practice.id) }}" method="POST" novalidate>
+                  <form action="{{ url_for('practice_update', practice_id=practice.practice_id) }}" method="POST" novalidate>
                     <div class="modal-body">
                       <p align="left">
                         <label for="practice_date">Practice Date:</label><br>
@@ -114,8 +114,8 @@
                 </div>
               </div>
             </div>
-            <button type="button" class="btn btn-outline-danger btn-sm btn-block" data-bs-toggle="modal" data-bs-target="#delete_modal{{ practice.id }}">Delete</button>
-            <div class="modal fade" id="delete_modal{{practice.id}}" aria-labelledby="delete_modalLabel" aria-hidden="true">
+            <button type="button" class="btn btn-outline-danger btn-sm btn-block" data-bs-toggle="modal" data-bs-target="#delete_modal{{ practice.practice_id }}">Delete</button>
+            <div class="modal fade" id="delete_modal{{practice.practice_id}}" aria-labelledby="delete_modalLabel" aria-hidden="true">
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -127,7 +127,7 @@
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <form action="{{url_for('practice_delete', practice_id=practice.id)}}" method="POST">
+                    <form action="{{url_for('practice_delete', practice_id=practice.practice_id)}}" method="POST">
                       <input type="submit" class="btn btn-primary" value="Delete">
                     </form>
                   </div>
@@ -138,7 +138,7 @@
         </tr>
         {% endfor %}
       </table>
-      
+    
     </div>
 </section>
 
