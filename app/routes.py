@@ -2,19 +2,49 @@ from flask import render_template, redirect, url_for, flash, session, request
 from flask_login import login_user, logout_user, login_required, current_user
 from app import app, db, login
 from app.models import User, Team, Practice
-from app.forms import LoginForm, TeamForm, PracticeForm
+from app.forms import LoginForm, RegistrationForm, TeamForm, PracticeForm
 
 
 # HOME PAGE
-
 
 @app.route('/')
 def index():
     return render_template('index.html')
 
 
-# USER - LOGIN, LOGOUT
+# USER REGISTRATION
 
+@app.route('/register', methods=['GET', 'POST'])
+def user_registration():
+    form = RegistrationForm()
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            form_first_name = form.first_name.data
+            form_last_name = form.last_name.data
+            form_email = form.email.data
+            form_user_name = form.user_name.data
+            form_password = form.password.data
+
+            user = User(first_name=form_first_name,
+                        last_name=form_last_name,
+                        email=form_email,
+                        user_name=form_user_name,
+                        password=form_password)
+            db.execute("""
+            INSERT INTO `user` 
+            (`first_name`, `last_name`, `email`, `user_name`, `password`) 
+            VALUES (%s, %s, %s, %s, %s)
+            """, (user.first_name, user.last_name, user.email, user.user_name, user.password))
+
+            flash('Registration Successful!', category='success')
+            return redirect(url_for('user_login', first_name=user.first_name))
+
+        flash('Please fill out all fields...', category='warning')
+
+    return render_template('register.html', title='Register', form=form)
+
+
+# USER - LOGIN, LOGOUT
 
 @app.route('/login', methods=['GET', 'POST'])
 def user_login():
@@ -36,7 +66,7 @@ def user_login():
             return redirect(url_for('user_login'))
 
         login_user(user)
-        session.permanent = True
+        session.permanent = False
         flash('Log in success!', category='success')
         return redirect(url_for('index'))
 
@@ -55,7 +85,6 @@ def unauthorized():
 
 
 # TEAM - MAIN, UPDATE, DELETE
-
 
 @login_required
 @app.route('/teams', methods=['GET', 'POST'])
@@ -100,7 +129,6 @@ def team_delete(team_id):
 
 
 # PRACTICES - MAIN, UPDATE, DELETE
-
 
 @login_required
 @app.route('/practices', methods=['GET', 'POST'])

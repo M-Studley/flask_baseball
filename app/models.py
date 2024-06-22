@@ -17,9 +17,12 @@ def load_user(user_id):
 # User Model
 @dataclass
 class User(UserMixin):
-    id: int
+    first_name: str
+    last_name: str
+    email: str
     user_name: str
     password: str
+    id: int = None
 
 
 # Team Model
