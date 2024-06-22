@@ -39,6 +39,7 @@ def user_login():
         session.permanent = True
         flash('Log in success!', category='success')
         return redirect(url_for('index'))
+
     return render_template('login.html', title='Log In', form=form)
 
 
@@ -60,14 +61,17 @@ def unauthorized():
 @app.route('/teams', methods=['GET', 'POST'])
 def teams():
     form = TeamForm()
-    if request.method == 'POST' and form.validate():
-        team_name = request.form.get('team_name')
-        team_mascot = request.form.get('team_mascot')
-        team = Team(team_name=team_name, team_mascot=team_mascot)
-        db.execute('INSERT INTO `team` (`team_name`, `team_mascot`) VALUES (%s, %s)',
-                   (team.team_name, team.team_mascot))
-        flash('Team successfully created!', category='success')
-        return redirect(url_for('teams'))
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            team_name = request.form.get('team_name')
+            team_mascot = request.form.get('team_mascot')
+            team = Team(team_name=team_name, team_mascot=team_mascot)
+            db.execute('INSERT INTO `team` (`team_name`, `team_mascot`) VALUES (%s, %s)',
+                       (team.team_name, team.team_mascot))
+            flash('Team successfully created!', category='success')
+            return redirect(url_for('teams'))
+
+        flash('Please fill out all fields...', category='warning')
 
     all_teams = db.fetchall('SELECT * FROM `team`')
     return render_template('teams.html', form=form, teams=all_teams)
@@ -106,14 +110,22 @@ def practices():
     form.teams.choices = [(team['id'], team['team_name']) for team in all_teams]
 
     if request.method == 'POST':
-        practice_date = request.form.get('practice_date')
-        practice_length = request.form.get('practice_length')
-        team_id = request.form.get('teams')
-        practice = Practice(practice_date=practice_date, practice_length=float(practice_length), team_id=int(team_id))
-        db.execute(query='INSERT INTO `practice` (`practice_date`, `practice_length`, `team_id`) VALUES (%s, %s, %s)',
-                   data=(practice.practice_date, practice.practice_length, practice.team_id))
-        flash('Practice successfully created!', category='success')
-        return redirect(url_for('practices'))
+        if form.validate_on_submit():
+            practice_date = request.form.get('practice_date')
+            practice_length = request.form.get('practice_length')
+            team_id = request.form.get('teams')
+            practice = Practice(practice_date=practice_date, practice_length=float(practice_length),
+                                team_id=int(team_id))
+            db.execute(query="""
+            INSERT INTO `practice` 
+            (`practice_date`, `practice_length`, `team_id`) 
+            VALUES (%s, %s, %s)
+            """, data=(practice.practice_date, practice.practice_length, practice.team_id))
+
+            flash('Practice successfully created!', category='success')
+            return redirect(url_for('practices'))
+
+        flash('Please fill out all fields...', category='warning')
 
     all_practices = db.fetchall(
         """

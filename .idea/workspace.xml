@@ -8,8 +8,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7745e97-56f1-4391-b43c-4e209dd10986" name="Changes" comment="Eighteenth push.&#10;&#10;UPDATE:&#10;1. forms.py&#10;  a. removed DataRequired() and substituted InputRequired()&#10;2. index.html&#10;  a. flash messages with categories&#10;3. login.html&#10;  a. flash messages with categories&#10;4. practices.html&#10;  a. flash messages with categories&#10;5. teams.html&#10;  a. flash messages with categories&#10;6. routes.py&#10;  a. flash messages with categories&#10;  b. all_practices query modified to include practice id&#10;  &#10;CREATED: &#10;  NONE&#10;  &#10;DELETED:&#10;  NONE">
-      <change beforePath="$PROJECT_DIR$/app/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models.py" afterDir="false" />
+    <list default="true" id="f7745e97-56f1-4391-b43c-4e209dd10986" name="Changes" comment="Eighteenth push.&#10;&#10;UPDATE:&#10;1. models.py&#10;  a. removed unnecessary method&#10;2. index.html&#10;  a. cleaned up all_practice query to be multi line&#10;  b. fixed create practice flash message to say Practice and not team&#10;&#10;  &#10;CREATED: &#10;  NONE&#10;  &#10;DELETED:&#10;  NONE">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -329,7 +329,15 @@
       <option name="project" value="LOCAL" />
       <updated>1718976782073</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="Eighteenth push.&#10;&#10;UPDATE:&#10;1. models.py&#10;  a. removed unnecessary method&#10;2. index.html&#10;  a. cleaned up all_practice query to be multi line&#10;  b. fixed create practice flash message to say Practice and not team&#10;&#10;  &#10;CREATED: &#10;  NONE&#10;  &#10;DELETED:&#10;  NONE">
+      <option name="closed" value="true" />
+      <created>1718977277903</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1718977277903</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -367,6 +375,7 @@
     <MESSAGE value="Seventeenth push.&#10;&#10;UPDATE:&#10;1. models.py&#10;  a. removed unnecessary method&#10;2. routes.py&#10;  a. removed unnecessary function&#10;  &#10;CREATED: &#10;NONE&#10;  &#10;DELETED:&#10;NONE" />
     <MESSAGE value="Eighteenth push.&#10;&#10;UPDATE:&#10;1. index.py&#10;  a. removed fluff&#10;2. routes.py&#10;  a. validate_on_submit() for all forms with flash messages&#10;  &#10;CREATED: &#10;NONE&#10;  &#10;DELETED:&#10;NONE" />
     <MESSAGE value="Eighteenth push.&#10;&#10;UPDATE:&#10;1. forms.py&#10;  a. removed DataRequired() and substituted InputRequired()&#10;2. index.html&#10;  a. flash messages with categories&#10;3. login.html&#10;  a. flash messages with categories&#10;4. practices.html&#10;  a. flash messages with categories&#10;5. teams.html&#10;  a. flash messages with categories&#10;6. routes.py&#10;  a. flash messages with categories&#10;  b. all_practices query modified to include practice id&#10;  &#10;CREATED: &#10;  NONE&#10;  &#10;DELETED:&#10;  NONE" />
-    <option name="LAST_COMMIT_MESSAGE" value="Eighteenth push.&#10;&#10;UPDATE:&#10;1. forms.py&#10;  a. removed DataRequired() and substituted InputRequired()&#10;2. index.html&#10;  a. flash messages with categories&#10;3. login.html&#10;  a. flash messages with categories&#10;4. practices.html&#10;  a. flash messages with categories&#10;5. teams.html&#10;  a. flash messages with categories&#10;6. routes.py&#10;  a. flash messages with categories&#10;  b. all_practices query modified to include practice id&#10;  &#10;CREATED: &#10;  NONE&#10;  &#10;DELETED:&#10;  NONE" />
+    <MESSAGE value="Eighteenth push.&#10;&#10;UPDATE:&#10;1. models.py&#10;  a. removed unnecessary method&#10;2. index.html&#10;  a. cleaned up all_practice query to be multi line&#10;  b. fixed create practice flash message to say Practice and not team&#10;&#10;  &#10;CREATED: &#10;  NONE&#10;  &#10;DELETED:&#10;  NONE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Eighteenth push.&#10;&#10;UPDATE:&#10;1. models.py&#10;  a. removed unnecessary method&#10;2. index.html&#10;  a. cleaned up all_practice query to be multi line&#10;  b. fixed create practice flash message to say Practice and not team&#10;&#10;  &#10;CREATED: &#10;  NONE&#10;  &#10;DELETED:&#10;  NONE" />
   </component>
 </project>
