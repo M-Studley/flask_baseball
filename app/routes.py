@@ -61,17 +61,19 @@ def user_login():
     if form.validate_on_submit():
         user = User(**user_data)
         password = user.password
-        print(password)
-        if not user:
-            if not check_password_hash(password, form_password):
-                flash('Invalid username or password!', category='danger')
-                return redirect(url_for('user_login'))
 
-        login_user(user)
-        session.permanent = False
-        session['first_name'] = user.first_name
-        flash('Log in success!', category='success')
-        return redirect(url_for('index'))
+        if not user:
+            flash('Invalid username or password!', category='danger')
+            return redirect(url_for('user_login'))
+
+        if check_password_hash(password, form_password):
+            login_user(user)
+            session.permanent = False
+            session['first_name'] = user.first_name
+            flash('Log in success!', category='success')
+            return redirect(url_for('index'))
+        else:
+            flash('Incorrect password...', category='danger')
 
     return render_template('login.html', title='Log In', form=form)
 
