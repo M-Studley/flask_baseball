@@ -67,6 +67,7 @@ def user_login():
 
         login_user(user)
         session.permanent = False
+        session['first_name'] = user.first_name
         flash('Log in success!', category='success')
         return redirect(url_for('index'))
 

@@ -8,13 +8,17 @@
 
 <!-- Header-->
 <header class="py-4">
-    <div class="container px-lg-5">
-        <div class="p-4 p-lg-1 bg-light rounded-3 text-center">
-            <div class="m-4 m-lg-5">
-                <h1 class="display-5 fw-bold">Welcome!</h1>
-            </div>
-        </div>
+  <div class="container px-lg-5">
+    <div class="p-4 p-lg-1 bg-light rounded-3 text-center">
+      <div class="m-4 m-lg-5">
+        {% if current_user.is_anonymous %}
+        <h1 class="display-5 fw-bold">Welcome!</h1>
+        {% else %}
+        <h1 class="display-5 fw-bold">Let's get started!</h1>
+        {% endif %}
+      </div>
     </div>
+  </div>
 </header>
 <!-- About section-->
 <section id="about">
@@ -36,18 +40,22 @@
   </div>
 
   <div class="container px-4" align="center">
-      <div class="row gx-4 justify-content-center">
-          <div class="col-lg-10">
-              <br>
-              <h1>Login or create a new account to begin.</h1>
-              <br>
-              <p></p>
-              <img src="{{ url_for('static', filename='images/fenway_park_practice.jpg') }}" alt="Fenway Park">
-              <br>
-              <br>
-              <br>
-          </div>
+    <div class="row gx-4 justify-content-center">
+      <div class="col-lg-10">
+        <br>
+        {% if current_user.is_anonymous %}
+        <h1>Login or create a new account to begin.</h1>
+        {% else %}
+        <h1>Welcome, {{ session.first_name }}</h1>
+        {% endif %}
+        <br>
+        <p></p>
+        <img src="{{ url_for('static', filename='images/fenway_park_practice.jpg') }}" alt="Fenway Park">
+        <br>
+        <br>
+        <br>
       </div>
+    </div>
   </div>
 </section>
 
