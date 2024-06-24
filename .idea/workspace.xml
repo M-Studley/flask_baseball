@@ -8,10 +8,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f7745e97-56f1-4391-b43c-4e209dd10986" name="Changes" comment="Eighteenth push.&#10;&#10;UPDATE:&#10;1. base.html&#10;  a. removed Home link from the home page&#10;  b. added Create User link&#10;2. forms.py&#10;  a. Registration form&#10;3. models.py&#10;  a. User model now includes first name, last name, and email&#10;4. routes.py&#10;  a. user_registration&#10;  &#10;CREATED: &#10;1. register.html&#10;  a. New form for registrations&#10;  &#10;DELETED:&#10;  NONE">
+    <list default="true" id="f7745e97-56f1-4391-b43c-4e209dd10986" name="Changes" comment="Eighteenth push.&#10;&#10;UPDATE:&#10;1. routes.py&#10;  a. assigned session['first_name'] = user.first_name&#10;2. index.html&#10;  a. When the user is logged in the home page displays their name&#10;  &#10;CREATED: &#10;  NONE&#10;  &#10;DELETED:&#10;  NONE">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -354,7 +354,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719051141822</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Eighteenth push.&#10;&#10;UPDATE:&#10;1. routes.py&#10;  a. assigned session['first_name'] = user.first_name&#10;2. index.html&#10;  a. When the user is logged in the home page displays their name&#10;  &#10;CREATED: &#10;  NONE&#10;  &#10;DELETED:&#10;  NONE">
+      <option name="closed" value="true" />
+      <created>1719209277342</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1719209277342</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -369,7 +377,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Second push (gunicorn)." />
     <MESSAGE value="Third push (.flaskenv, .gitignore, Procfile)." />
     <MESSAGE value="Fourth push" />
     <MESSAGE value="Fifth push&#10;Modified base and index" />
@@ -394,6 +401,7 @@
     <MESSAGE value="Eighteenth push.&#10;&#10;UPDATE:&#10;1. models.py&#10;  a. removed unnecessary method&#10;2. index.html&#10;  a. cleaned up all_practice query to be multi line&#10;  b. fixed create practice flash message to say Practice and not team&#10;&#10;  &#10;CREATED: &#10;  NONE&#10;  &#10;DELETED:&#10;  NONE" />
     <MESSAGE value="Eighteenth push.&#10;&#10;UPDATE:&#10;1. routes.py&#10;  a. validate_on_submit() for adding teams and practices&#10;  &#10;CREATED: &#10;  NONE&#10;  &#10;DELETED:&#10;  NONE" />
     <MESSAGE value="Eighteenth push.&#10;&#10;UPDATE:&#10;1. base.html&#10;  a. removed Home link from the home page&#10;  b. added Create User link&#10;2. forms.py&#10;  a. Registration form&#10;3. models.py&#10;  a. User model now includes first name, last name, and email&#10;4. routes.py&#10;  a. user_registration&#10;  &#10;CREATED: &#10;1. register.html&#10;  a. New form for registrations&#10;  &#10;DELETED:&#10;  NONE" />
-    <option name="LAST_COMMIT_MESSAGE" value="Eighteenth push.&#10;&#10;UPDATE:&#10;1. base.html&#10;  a. removed Home link from the home page&#10;  b. added Create User link&#10;2. forms.py&#10;  a. Registration form&#10;3. models.py&#10;  a. User model now includes first name, last name, and email&#10;4. routes.py&#10;  a. user_registration&#10;  &#10;CREATED: &#10;1. register.html&#10;  a. New form for registrations&#10;  &#10;DELETED:&#10;  NONE" />
+    <MESSAGE value="Eighteenth push.&#10;&#10;UPDATE:&#10;1. routes.py&#10;  a. assigned session['first_name'] = user.first_name&#10;2. index.html&#10;  a. When the user is logged in the home page displays their name&#10;  &#10;CREATED: &#10;  NONE&#10;  &#10;DELETED:&#10;  NONE" />
+    <option name="LAST_COMMIT_MESSAGE" value="Eighteenth push.&#10;&#10;UPDATE:&#10;1. routes.py&#10;  a. assigned session['first_name'] = user.first_name&#10;2. index.html&#10;  a. When the user is logged in the home page displays their name&#10;  &#10;CREATED: &#10;  NONE&#10;  &#10;DELETED:&#10;  NONE" />
   </component>
 </project>

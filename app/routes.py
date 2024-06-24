@@ -1,5 +1,6 @@
 from flask import render_template, redirect, url_for, flash, session, request
 from flask_login import login_user, logout_user, login_required, current_user
+from flask_bcrypt import generate_password_hash, check_password_hash
 from app import app, db, login
 from app.models import User, Team, Practice
 from app.forms import LoginForm, RegistrationForm, TeamForm, PracticeForm
@@ -23,7 +24,7 @@ def user_registration():
             form_last_name = form.last_name.data
             form_email = form.email.data
             form_user_name = form.user_name.data
-            form_password = form.password.data
+            form_password = generate_password_hash(form.password.data)
 
             user = User(first_name=form_first_name,
                         last_name=form_last_name,
@@ -60,10 +61,11 @@ def user_login():
     if form.validate_on_submit():
         user = User(**user_data)
         password = user.password
-
-        if not user or password != form_password:
-            flash('Invalid username or password!', category='danger')
-            return redirect(url_for('user_login'))
+        print(password)
+        if not user:
+            if not check_password_hash(password, form_password):
+                flash('Invalid username or password!', category='danger')
+                return redirect(url_for('user_login'))
 
         login_user(user)
         session.permanent = False
